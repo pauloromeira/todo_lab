@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'djangobower',
     'rest_framework',
+    'rest_framework_nested',
     'todo_api',
     'todo_web',
 )
