@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html ng-app='todo'>
+  <head>
+    <title>Todo Lab</title>
+
+    <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}">
+    <link rel='stylesheet' href="{% static 'css/main.css' %}">
+  </head>
+
+  <body>
+    <div ui-view></div>
+
+    <script type="text/javascript" src="{% static 'angular/angular.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'angular-ui-router/release/angular-ui-router.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>
