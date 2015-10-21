@@ -1,11 +1,20 @@
-body, .progress-bar, .badge-progress {
-  background-color: #679;
+body {
+  /* background-color: #dbdbd9; */
+  background-color: #ddd;
+}
+
+.progress-bar, .badge-progress {
+  background-color: #a55c3e;
+}
+
+nav.navbar {
+  border-radius: 0px;
 }
 
 .badge-progress {
     display: inline-block;
     min-width: 10px;
-    padding: 2px 2px;
+    padding: 2px 4px;
     font-size: 12px;
     font-weight: 700;
     line-height: 1;
@@ -26,6 +35,11 @@ body, .progress-bar, .badge-progress {
   margin-bottom: 3px;
 }
 
-h4.panel-title {
+.panel-title {
   margin-bottom: 6px;
+  color: #777;
+}
+
+.panel-group .panel {
+  border-radius: 0px;
 }
