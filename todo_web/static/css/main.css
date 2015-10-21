@@ -21,3 +21,11 @@ body, .progress-bar, .badge-progress {
   margin-bottom: 0px;
   height: 21px;
 }
+
+.todo-item {
+  margin-bottom: 3px;
+}
+
+h4.panel-title {
+  margin-bottom: 6px;
+}
