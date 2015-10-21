@@ -1,0 +1,23 @@
+body, .progress-bar, .badge-progress {
+  background-color: #679;
+}
+
+.badge-progress {
+    display: inline-block;
+    min-width: 10px;
+    padding: 2px 2px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border-radius: 4px;
+    margin-left: 2px;
+}
+
+.progress {
+  margin-bottom: 0px;
+  height: 21px;
+}
