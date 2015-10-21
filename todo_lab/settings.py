@@ -39,7 +39,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'djangobower',
     'rest_framework',
-    'rest_framework_nested',
     'todo_api',
     'todo_web',
 )
@@ -120,4 +119,5 @@ BOWER_INSTALLED_APPS = (
     'angularjs#1.4.7',
     'angular-ui-router#0.2.15',
     'bootstrap#3.3.5',
+    'ngDraggable#0.1.8',
 )
