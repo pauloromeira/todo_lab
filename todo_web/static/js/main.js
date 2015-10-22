@@ -17,29 +17,37 @@ app.config(function($stateProvider, $urlRouterProvider){
 });
 
 app.controller('MainController', function ($scope, todoFactory, $state) {
-  $scope.todo_lists = [];
-  $scope.edit_mode = false;
+  $scope.lists = [];
+  $scope.editMode = false;
 
   $scope.filterDone = function (items){
     return items.filter(function(i){ return i.done });
   };
 
-  $scope.newTodoList = function () {
-    var todo_list = {};
-    todoFactory.list.add(todo_list).then(function(res){
-      $scope.todo_lists.push(res.data);
+  $scope.newList = function () {
+    var list = {};
+    todoFactory.list.add(list).then(function(res){
+      $scope.lists.push(res.data);
     });
   };
 
-  $scope.newTodoItem = function (todo_list) {
-    var todo_item = { todo_list: todo_list.id };
-    todoFactory.item.add(todo_item).then(function(res){
-      todo_list.items.push(res.data);
+  $scope.updateList = function(list) {
+    todoFactory.list.update(list);
+  };
+
+  $scope.newItem = function (list) {
+    var item = { todo_list: list.id };
+    todoFactory.item.add(item).then(function(res){
+      list.items.push(res.data);
     });
+  };
+
+  $scope.updateItem = function(item) {
+    todoFactory.item.update(item);
   };
 
   todoFactory.list.all().then(function(res){
-    $scope.todo_lists = res.data;
+    $scope.lists = res.data;
   });
 });
 
@@ -53,14 +61,14 @@ app.factory('todoFactory', function ($http, BASE_URL, LISTS_PATH, ITEMS_PATH) {
   };
 
   var add = function(resourcePath){
-    return function(element) { 
-      return $http.post(BASE_URL + resourcePath, element) 
+    return function(object) { 
+      return $http.post(BASE_URL + resourcePath, object) 
     };
   };
 
   var update = function(resourcePath){
-    return function(element) { 
-      return $http.put(BASE_URL + resourcePath + element.id, element) 
+    return function(object) { 
+      return $http.put(BASE_URL + resourcePath + object.id, object) 
     };
   };
 
