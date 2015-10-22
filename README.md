@@ -15,6 +15,8 @@ python manage.py migrate
 * Python 3.5
 * Bower
 
+***
+
 # Todo
 * Create user table and add a 1-n relationship with todo list
 * Implement social authorization(s) (OAuth2)
