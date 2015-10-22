@@ -3,7 +3,7 @@ from django.db import models
 
 class TodoList(models.Model):
     created = models.DateTimeField(auto_now_add=True)
-    title = models.CharField(max_length=255, default='')
+    title = models.CharField(max_length=255)
     order = models.IntegerField(default=0)
 
     def __str__(self):
@@ -12,7 +12,7 @@ class TodoList(models.Model):
 
 class TodoItem(models.Model):
     created = models.DateTimeField(auto_now_add=True)
-    text = models.TextField(default='')
+    text = models.TextField()
     done = models.BooleanField(default=False)
     order = models.IntegerField(default=0)
     todo_list = models.ForeignKey(TodoList, related_name='items')

@@ -25,7 +25,7 @@ app.controller('MainController', function ($scope, todoFactory, $state) {
   };
 
   $scope.newList = function () {
-    var list = {};
+    var list = {title: "Todo List"};
     todoFactory.list.add(list).then(function(res){
       $scope.lists.push(res.data);
     });
@@ -36,7 +36,7 @@ app.controller('MainController', function ($scope, todoFactory, $state) {
   };
 
   $scope.newItem = function (list) {
-    var item = { todo_list: list.id };
+    var item = { todo_list: list.id, text: "Task" };
     todoFactory.item.add(item).then(function(res){
       list.items.push(res.data);
     });
